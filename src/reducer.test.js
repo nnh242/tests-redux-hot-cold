@@ -14,5 +14,7 @@ describe ('Reducer', () => {
         const state = reducer(currentState, {type: '__UNKNOWN'});
         expect(state).toBe(currentState);
     });
-    
+    describe('newGame', () => {
+        it('Should start a new game', () => )
+    })
 })

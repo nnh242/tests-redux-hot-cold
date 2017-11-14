@@ -1,7 +1,7 @@
 import {NEW_GAME,newGame, MAKE_GUESS, makeGuess, TOGGLE_INFO_MODAL, toggleInfoModal} from './actions';
 
 describe('newGame', () => {
-    it('Should start a new game', () => {
+    it('Should return an action to start a new game', () => {
         const action = newGame();
         expect(action.type).toEqual(NEW_GAME);
         expect(action.correctAnswer).toBeGreaterThanOrEqual(0);
@@ -10,14 +10,14 @@ describe('newGame', () => {
 });
 
 describe('toggleInfoModal', () => {
-    it('Should toggle info', () => {
+    it('Should return an action to toggle info', () => {
         const action = toggleInfoModal();
         expect(action.type).toEqual(TOGGLE_INFO_MODAL);
     });
 });
 
 describe ('makeGuess', () => {
-    it('Should make guesses', () => {
+    it('Should return an action to make guesses', () => {
         const guess = 10;
         const action = makeGuess(guess);
         expect(action.type).toEqual(MAKE_GUESS);
