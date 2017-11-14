@@ -53,5 +53,21 @@ describe ('Reducer', () => {
         state = reducer(state, makeGuess(100));
         expect(state.guesses).toEqual([25,70,90,99,100]);
         expect(state.feedback).toEqual('You got it!');
-    })
+    });
+    describe('toggleInfoModal', () => {
+        it('Should toggle info modal on', () => {
+            let state = {
+                showInfoModal: false
+            };
+            state = reducer(state, toggleInfoModal());
+            expect(state.showInfoModal).toEqual(true);
+        });
+
+        it('Should toggle info modal off', () => {
+            let state = {
+                showInfoModal: true
+            };
+            state = reducer(state, toggleInfoModal());
+            expect(state.showInfoModal).toEqual(false);
+        });
 })
